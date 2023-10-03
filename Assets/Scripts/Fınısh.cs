@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Fınısh : MonoBehaviour
 {
     private AudioSource fınıshSound;
@@ -17,7 +17,7 @@ public class Fınısh : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             fınıshSound.Play();
-            ComplateLevel();
+            Invoke("ComplateLevel", 2f);
 
         
         
@@ -27,6 +27,8 @@ public class Fınısh : MonoBehaviour
 
     private void ComplateLevel() 
     {
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         
     
     
